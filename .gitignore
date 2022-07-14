@@ -68,6 +68,7 @@ releasePassword
 install
 install.bat
 LICENSE.md
+.testEnvRunning
 
 
 
@@ -96,6 +97,9 @@ LICENSE.md
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
+
+# Other files
+.idea/runConfigurations.xml
 
 # Gradle
 .idea/**/gradle.xml
