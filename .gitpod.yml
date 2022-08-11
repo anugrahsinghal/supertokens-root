@@ -2,8 +2,11 @@
 # Please adjust to your needs (see https://www.gitpod.io/docs/config-gitpod-file)
 # and commit this file to your remote git repository to share the goodness with others.
 
+image:
+  file: .gitpod.Dockerfile
+
 tasks:
-  - before: (Y | sdk install java 15.0.1-open || true) && ./loadModules
+  - before: ./loadModules
     init: ./gradlew clean assemble
   - init: docker-compose up -d
 
@@ -13,6 +16,7 @@ ports:
      onOpen: ignore
    - port: 5432
      onOpen: ignore
-  
 
-
+jetbrains:
+  intellij:
+    vmoptions: "-Xmx6g"
