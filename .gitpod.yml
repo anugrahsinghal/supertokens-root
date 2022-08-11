@@ -7,7 +7,7 @@ image:
 
 tasks:
   - before: ./loadModules
-    init: ./gradlew clean assemble
+    init: ./gradlew -xtest build
   - init: docker-compose up -d
 
 
