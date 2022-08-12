@@ -10,12 +10,24 @@ tasks:
     init: ./gradlew -xtest build
   - init: docker-compose up -d
 
-
 ports:
-   - port: 3306
+   - port: 3000-8999
+     visibility: public
      onOpen: ignore
-   - port: 5432
-     onOpen: ignore
+
+
+github:
+   prebuilds:
+     # enable for the master/default branch (defaults to true)
+     master: true
+     # enable for all branches in this repo (defaults to false)
+     branches: true
+     # enable for pull requests coming from this repo (defaults to true)
+     pullRequests: true
+     # add a check to pull requests (defaults to true)
+     addCheck: false
+     # add a "Review in Gitpod" button as a comment to pull requests (defaults to false)
+     addComment: false
 
 jetbrains:
   intellij:
