@@ -8,6 +8,10 @@ image:
 tasks:
   - before: ./loadModules
     init: ./gradlew -xtest build
+    command: |
+      brew install k6
+      mkdir '.vscode'
+      echo '{"zenMode.silentNotifications": true}' > .vscode/settings.json
   - init: docker-compose up -d
 
 ports:
